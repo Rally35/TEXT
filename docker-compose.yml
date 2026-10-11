@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      # This maps your local folder to the container, meaning if you 
+      # edit the Python file, it updates live without needing a rebuild!
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
